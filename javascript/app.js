@@ -54,6 +54,7 @@ ul.appendChild(li);
 li.textContent = `Total: ${Seattle.sumOfCookies} cookies`;
 
 
+
 const Tokyo = {
     name: 'Tokyo',
     minCookiesPerHour: 3,
@@ -106,3 +107,58 @@ for(let i=0; i< Tokyo.cookiesThroughTheDayForLocation.length; i++){
 li = document.createElement('li');
 ul.appendChild(li);
 li.textContent = `Total: ${Tokyo.sumOfCookies} cookies`;
+
+
+
+const Dubai = {
+    name: 'Dubai',
+    minCookiesPerHour: 11,
+    maxCookiesPerHour: 38,
+    avgCookiesPerCustomer: 3.7,
+    cookiesThroughTheDayForLocation: [],
+    sumOfCookies: 0,
+
+    numOfCustomersPerHour: function(min,max){
+        return Math.floor(Math.random() * ( max - min + 1 ) + min );
+    },
+    calcCookiesPerHour: function(){
+        for(let i=0; i<14; i++){
+            let number = Math.floor(this.numOfCustomersPerHour(this.minCookiesPerHour, this.maxCookiesPerHour) * this.avgCookiesPerCustomer);
+            this.cookiesThroughTheDayForLocation.push(number);
+            this.sumOfCookies += number;
+        }
+    },
+
+    
+}
+Dubai.calcCookiesPerHour();
+console.log(Dubai.cookiesThroughTheDayForLocation);
+console.log(Dubai.sumOfCookies);
+
+ section = document.getElementById("first");
+console.log(section);
+h2 = document.createElement('h2');
+console.log(h2);
+section.appendChild(h2);
+h2.textContent = Dubai.name;
+
+ul = document.createElement('ul');
+section.appendChild(ul);
+
+li;
+time = 6;
+pm = "false";
+for(let i=0; i< Dubai.cookiesThroughTheDayForLocation.length; i++){
+    li = document.createElement('li');
+    ul.appendChild(li);
+    if( i <= 6 ){
+        li.textContent = `${time}am: ${Dubai.cookiesThroughTheDayForLocation[i]} cookies`;
+    }else {
+        li.textContent = `${time}pm: ${Dubai.cookiesThroughTheDayForLocation[i]} cookies`;
+    }
+    time = time%12;
+    time++;
+}
+li = document.createElement('li');
+ul.appendChild(li);
+li.textContent = `Total: ${Dubai.sumOfCookies} cookies`;
