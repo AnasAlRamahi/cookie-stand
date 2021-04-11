@@ -36,10 +36,18 @@ let ul = document.createElement('ul');
 section.appendChild(ul);
 
 let li;
+let time = 6;
+let pm = "false";
 for(let i=0; i< Seattle.cookiesThroughTheDayForLocation.length; i++){
     li = document.createElement('li');
     ul.appendChild(li);
-    li.textContent = Seattle.cookiesThroughTheDayForLocation[i];
+    if( i <= 6 ){
+    li.textContent = `${time}am: ${Seattle.cookiesThroughTheDayForLocation[i]} cookies`;
+    }else {
+        li.textContent = `${time}pm: ${Seattle.cookiesThroughTheDayForLocation[i]} cookies`;
+    }
+    time = time%12;
+    time++;
 }
 
 
