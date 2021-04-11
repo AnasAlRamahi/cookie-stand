@@ -1,5 +1,7 @@
 'use strict';
 
+
+//LOCATION: SEATTLE
 const Seattle = {
     name: 'Seattle',
     minCookiesPerHour: 23,
@@ -55,6 +57,7 @@ li.textContent = `Total: ${Seattle.sumOfCookies} cookies`;
 
 
 
+//LOCATION: TOKYO
 const Tokyo = {
     name: 'Tokyo',
     minCookiesPerHour: 3,
@@ -110,6 +113,7 @@ li.textContent = `Total: ${Tokyo.sumOfCookies} cookies`;
 
 
 
+//LOCATION: DUBAI
 const Dubai = {
     name: 'Dubai',
     minCookiesPerHour: 11,
@@ -165,6 +169,7 @@ li.textContent = `Total: ${Dubai.sumOfCookies} cookies`;
 
 
 
+//LOCATION: PARIS
 const Paris = {
     name: 'Paris',
     minCookiesPerHour: 20,
@@ -217,3 +222,62 @@ for(let i=0; i< Paris.cookiesThroughTheDayForLocation.length; i++){
 li = document.createElement('li');
 ul.appendChild(li);
 li.textContent = `Total: ${Paris.sumOfCookies} cookies`;
+
+
+
+//LOCATION: LIMA
+const Lima = {
+    name: 'Lima',
+    minCookiesPerHour: 2,
+    maxCookiesPerHour: 16,
+    avgCookiesPerCustomer: 4.6,
+    cookiesThroughTheDayForLocation: [],
+    sumOfCookies: 0,
+
+    numOfCustomersPerHour: function(min,max){
+        return Math.floor(Math.random() * ( max - min + 1 ) + min );
+    },
+    calcCookiesPerHour: function(){
+        for(let i=0; i<14; i++){
+            let number = Math.floor(this.numOfCustomersPerHour(this.minCookiesPerHour, this.maxCookiesPerHour) * this.avgCookiesPerCustomer);
+            this.cookiesThroughTheDayForLocation.push(number);
+            this.sumOfCookies += number;
+        }
+    },
+
+    
+}
+Lima.calcCookiesPerHour();
+console.log(Lima.cookiesThroughTheDayForLocation);
+console.log(Lima.sumOfCookies);
+
+ section = document.getElementById("first");
+console.log(section);
+h2 = document.createElement('h2');
+console.log(h2);
+section.appendChild(h2);
+h2.textContent = Lima.name;
+
+ul = document.createElement('ul');
+section.appendChild(ul);
+
+li;
+time = 6;
+pm = "false";
+for(let i=0; i< Lima.cookiesThroughTheDayForLocation.length; i++){
+    li = document.createElement('li');
+    ul.appendChild(li);
+    if( i <= 6 ){
+        li.textContent = `${time}am: ${Lima.cookiesThroughTheDayForLocation[i]} cookies`;
+    }else {
+        li.textContent = `${time}pm: ${Lima.cookiesThroughTheDayForLocation[i]} cookies`;
+    }
+    time = time%12;
+    time++;
+}
+li = document.createElement('li');
+ul.appendChild(li);
+li.textContent = `Total: ${Lima.sumOfCookies} cookies`;
+
+
+
