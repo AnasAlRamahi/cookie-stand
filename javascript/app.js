@@ -25,10 +25,22 @@ Seattle.calcCookiesPerHour();
 console.log(Seattle.cookiesThroughTheDayForLocation);
 console.log(Seattle.sumOfCookies);
 
-// let section = document.getElementById("first");
-// console.log(section);
-// let h2 = document.createElement('h2');
-// console.log(h2);
-// section.appendChild(h2);
-// h2.textContent(Seattle.name);
+let section = document.getElementById("first");
+console.log(section);
+let h2 = document.createElement('h2');
+console.log(h2);
+section.appendChild(h2);
+h2.textContent = Seattle.name;
+
+let ul = document.createElement('ul');
+section.appendChild(ul);
+
+let li;
+for(let i=0; i< Seattle.cookiesThroughTheDayForLocation.length; i++){
+    li = document.createElement('li');
+    ul.appendChild(li);
+    li.textContent = Seattle.cookiesThroughTheDayForLocation[i];
+}
+
+
 
