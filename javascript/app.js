@@ -129,6 +129,7 @@ let tokyo = new cookieLocation('Tokyo', 3, 24, 1.2);
 let dubai = new cookieLocation('Dubai', 11, 38, 3.7);
 let paris = new cookieLocation('Paris', 20, 38, 2.3);
 let lima = new cookieLocation('Lima', 2, 16, 4.6);
+let Amman = new cookieLocation('Amman', 23, 44, 5.5);
 
 for (let i = 0; i < locationArr.length; i++) {
     locationArr[i].render();
