@@ -14,50 +14,50 @@ const Seattle = {
         return Math.floor(Math.random() * ( max - min + 1 ) + min );
     },
     calcCookiesPerHour: function(){
+        let number = 0;
         for(let i=0; i<14; i++){
-            let number = Math.floor(this.numOfCustomersPerHour(this.minCookiesPerHour, this.maxCookiesPerHour) * this.avgCookiesPerCustomer);
+            number = Math.floor(this.numOfCustomersPerHour(this.minCookiesPerHour, this.maxCookiesPerHour) * this.avgCookiesPerCustomer);
             this.cookiesThroughTheDayForLocation.push(number);
             this.sumOfCookies += number;
         }
     },
-    listingItems: function(){
+    render: function(){
         this.calcCookiesPerHour();
         console.log(this.cookiesThroughTheDayForLocation);
         console.log(this.sumOfCookies);
 
         let section = document.getElementById("first");
         console.log(section);
-        let h2 = document.createElement('h2');
-        console.log(h2);
-        section.appendChild(h2);
-        h2.textContent = this.name;
+        let h2El = document.createElement('h2');
+        console.log(h2El);
+        section.appendChild(h2El);
+        h2El.textContent = this.name;
 
-        let ul = document.createElement('ul');
-        section.appendChild(ul);
+        let ulEl = document.createElement('ul');
+        section.appendChild(ulEl);
 
-        let li;
+        let liItem;
         let time = 6;
-        let pm = "false";
         for(let i=0; i< this.cookiesThroughTheDayForLocation.length; i++){
-            li = document.createElement('li');
-            ul.appendChild(li);
+            liItem = document.createElement('li');
+            ulEl.appendChild(liItem);
             if( i <= 6 ){
-                li.textContent = `${time}am: ${this.cookiesThroughTheDayForLocation[i]} cookies`;
+                liItem.textContent = `${time}am: ${this.cookiesThroughTheDayForLocation[i]} cookies`;
             }else {
-                li.textContent = `${time}pm: ${this.cookiesThroughTheDayForLocation[i]} cookies`;
+                liItem.textContent = `${time}pm: ${this.cookiesThroughTheDayForLocation[i]} cookies`;
             }
             time = time%12;
             time++;
         }
-        li = document.createElement('li');
-        ul.appendChild(li);
-        li.textContent = `Total: ${this.sumOfCookies} cookies`;
+        let liTotal = document.createElement('li');
+        ulEl.appendChild(liTotal);
+        liTotal.textContent = `Total: ${this.sumOfCookies} cookies`;
 
     }
 
     
 }
-Seattle. listingItems();
+Seattle. render();
 
 
 
@@ -80,7 +80,7 @@ const Tokyo = {
             this.sumOfCookies += number;
         }
     },
-    listingItems: function(){
+    render: function(){
         this.calcCookiesPerHour();
         console.log(this.cookiesThroughTheDayForLocation);
         console.log(this.sumOfCookies);
@@ -117,7 +117,7 @@ const Tokyo = {
 
     
 }
-Tokyo.listingItems();
+Tokyo.render();
 
 
 
@@ -140,7 +140,7 @@ const Dubai = {
             this.sumOfCookies += number;
         }
     },
-    listingItems: function(){
+    render: function(){
         this.calcCookiesPerHour();
         console.log(this.cookiesThroughTheDayForLocation);
         console.log(this.sumOfCookies);
@@ -177,7 +177,7 @@ const Dubai = {
 
     
 }
-Dubai.listingItems();
+Dubai.render();
 
 
 //LOCATION: PARIS
@@ -199,7 +199,7 @@ const Paris = {
             this.sumOfCookies += number;
         }
     },
-    listingItems: function(){
+    render: function(){
         this.calcCookiesPerHour();
         console.log(this.cookiesThroughTheDayForLocation);
         console.log(this.sumOfCookies);
@@ -236,7 +236,7 @@ const Paris = {
 
     
 }
-Paris.listingItems();
+Paris.render();
 
 
 //LOCATION: LIMA
@@ -258,7 +258,7 @@ const Lima = {
             this.sumOfCookies += number;
         }
     },
-    listingItems: function(){
+    render: function(){
         this.calcCookiesPerHour();
         console.log(this.cookiesThroughTheDayForLocation);
         console.log(this.sumOfCookies);
@@ -275,7 +275,6 @@ const Lima = {
 
         let li;
         let time = 6;
-        let pm = "false";
         for(let i=0; i< this.cookiesThroughTheDayForLocation.length; i++){
             li = document.createElement('li');
             ul.appendChild(li);
@@ -295,6 +294,6 @@ const Lima = {
 
     
 }
-Lima.listingItems();
+Lima.render();
 
-
+console.log(this);
