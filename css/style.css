@@ -1,12 +1,36 @@
- table {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body {
+    font-family: 'Bebas Neue', cursive; 
+    background-image: url(../images/pexels-oleg-magni-2033997.jpg);
+}
+ 
+table {
   
     display: table;
     border-collapse: separate;
     border-spacing: 2px;
     border-color: black;
     border: solid;
-
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 50px;
+    width: 50%;
+    background-color: white;
 }
+
 table tr td {
     border: solid;
+    width: 30px;
+    text-align: center;
+}
+table tr th {
+    width: 30px;
+}
+
+table thead, table tfoot {
+    background-color: lightgrey;
+}
+
+nav ul li {
+    display: inline-block;
 }
