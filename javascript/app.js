@@ -58,13 +58,16 @@ let sectionEl;
 let tableEl;
 let tableRow;
 let headerCol;
+
 function createTableHeader(){
 //create the table with the header row:
     sectionEl = document.getElementById('first');
     tableEl = document.createElement('table');
     sectionEl.appendChild(tableEl);
+    let tableHeader = document.createElement('thead');
+    tableEl.appendChild(tableHeader);
     tableRow = document.createElement('tr');
-    tableEl.appendChild(tableRow);
+    tableHeader.appendChild(tableRow);
     headerCol = document.createElement('th');
     tableRow.appendChild(headerCol);
     headerCol.textContent = '';
@@ -91,12 +94,12 @@ function createTableHeader(){
 
 function createTableFooter(){
     //rendering the results of each object inside the created table:
-    for (let i = 0; i < locationArr.length; i++) {
-        locationArr[i].render();
-    }   
+     
     //create the table total row at the bottom:
+    let tableFooter = document.createElement('tfoot');
+    tableEl.appendChild(tableFooter);
     let totalHourRow = document.createElement('tr');
-    tableEl.appendChild(totalHourRow);
+    tableFooter.appendChild(totalHourRow);
     let totalRowHeader = document.createElement('th');
     totalHourRow.appendChild(totalRowHeader);
     totalRowHeader.textContent = "Total";
@@ -126,6 +129,10 @@ let tokyo = new cookieLocation('Tokyo', 3, 24, 1.2);
 let dubai = new cookieLocation('Dubai', 11, 38, 3.7);
 let paris = new cookieLocation('Paris', 20, 38, 2.3);
 let lima = new cookieLocation('Lima', 2, 16, 4.6);
+
+for (let i = 0; i < locationArr.length; i++) {
+    locationArr[i].render();
+}  
 
 //calling the table footer function:
 createTableFooter();
