@@ -41,46 +41,84 @@ cookieLocation.prototype.render = function(){
         tableCol = document.createElement('td');
         tableMainRow.appendChild(tableCol);
         if( i <= 6 ){
-            tableCol.textContent = `${this.cookiesThroughTheDayForLocation[i]} cookies`;
+            tableCol.textContent = this.cookiesThroughTheDayForLocation[i];
         }else {
-            tableCol.textContent = `${this.cookiesThroughTheDayForLocation[i]} cookies`;
+            tableCol.textContent = this.cookiesThroughTheDayForLocation[i];
         }
         time = time%12;
         time++;
     }
-    let tableTotalCol = document.createElement('td');
+    let tableTotalCol = document.createElement('th');
     tableMainRow.appendChild(tableTotalCol);
-    tableTotalCol.textContent = `${this.sumOfCookies} cookies`;
+    tableTotalCol.textContent = this.sumOfCookies;
 
 }
 
+let sectionEl;
+let tableEl;
+let tableRow;
+let headerCol;
+function createTableHeader(){
 //create the table with the header row:
-let sectionEl = document.getElementById('first');
-let tableEl = document.createElement('table');
-sectionEl.appendChild(tableEl);
-let tableRow = document.createElement('tr');
-tableEl.appendChild(tableRow);
-let headerCol = document.createElement('th');
-tableRow.appendChild(headerCol);
-headerCol.textContent = '';
+    sectionEl = document.getElementById('first');
+    tableEl = document.createElement('table');
+    sectionEl.appendChild(tableEl);
+    tableRow = document.createElement('tr');
+    tableEl.appendChild(tableRow);
+    headerCol = document.createElement('th');
+    tableRow.appendChild(headerCol);
+    headerCol.textContent = '';
 
-//insert the time inside the header cells:
-for (let i = 0; i < 14; i++) {
-      headerCol = document.createElement('th');
-      tableRow.appendChild(headerCol);
-      if ( i< 6 ){
-      headerCol.textContent = `${time}am`;
-      } else {
-      headerCol.textContent = `${time}pm`;
-      }
-      time = time%12;
-      time++;
+    //insert the time inside the header cells:
+    for (let i = 0; i < 14; i++) {
+        headerCol = document.createElement('th');
+        tableRow.appendChild(headerCol);
+        if ( i< 6 ){
+        headerCol.textContent = `${time}am`;
+        } else {
+        headerCol.textContent = `${time}pm`;
+        }
+        time = time%12;
+        time++;
+    }
+    
+    //create the total column at the right edge:
+    let totalDayCol = document.createElement('th');
+    tableRow.appendChild(totalDayCol);
+    totalDayCol.textContent = "Total";
 }
 
-//create the total column at the right edge:
-let totalDayCol = document.createElement('th');
-tableRow.appendChild(totalDayCol);
-totalDayCol.textContent = "Total";
+
+function createTableFooter(){
+    //rendering the results of each object inside the created table:
+    for (let i = 0; i < locationArr.length; i++) {
+        locationArr[i].render();
+    }   
+    //create the table total row at the bottom:
+    let totalHourRow = document.createElement('tr');
+    tableEl.appendChild(totalHourRow);
+    let totalRowHeader = document.createElement('th');
+    totalHourRow.appendChild(totalRowHeader);
+    totalRowHeader.textContent = "Total";
+    let dataOfTotal = 0;
+    let dataOfWholeTotals = 0;
+    for (let i = 0; i < 14; i++) {
+        dataOfTotal = 0;
+        for (let j = 0; j < locationArr.length; j++) {
+            dataOfTotal += locationArr[j].cookiesThroughTheDayForLocation[i];
+        }
+        dataOfWholeTotals += dataOfTotal;
+        let totalCookies = document.createElement('th');
+        totalHourRow.appendChild(totalCookies);
+        totalCookies.textContent = dataOfTotal 
+    }
+    let totalOfTotals = document.createElement('th');
+    totalHourRow.appendChild(totalOfTotals);
+    totalOfTotals.textContent = dataOfWholeTotals;
+}
+
+//calling the table header function:
+createTableHeader();
 
 //insert the instances to be rendered:
 let seattle = new cookieLocation('Seattle', 23, 65, 6.3);
@@ -89,16 +127,5 @@ let dubai = new cookieLocation('Dubai', 11, 38, 3.7);
 let paris = new cookieLocation('Paris', 20, 38, 2.3);
 let lima = new cookieLocation('Lima', 2, 16, 4.6);
 
-//rendering the results of each object insidet he created table:
-for (let i = 0; i < locationArr.length; i++) {
-    locationArr[i].render();
-}
-
-
-//create the table total row at the bottom:
-let totalHourRow = document.createElement('tr');
-tableEl.appendChild(totalHourRow);
-for (let i = 0; i < locationArr.length; i++) {
-    
-
-}
+//calling the table footer function:
+createTableFooter();
