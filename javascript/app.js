@@ -2,7 +2,7 @@
 
 let locationArr = [];
 let time = 6;
-//LOCATION: SEATTLE
+
 function cookieLocation(location, minCookiesPerHour, maxCookiesPerHour, avgCookiesPerCustomer){
     this.location = location;
     this.minCookiesPerHour = minCookiesPerHour;
