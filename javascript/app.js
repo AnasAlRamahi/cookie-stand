@@ -29,8 +29,8 @@ cookieLocation.prototype.calcCookiesPerHour = function(){
 
 cookieLocation.prototype.render = function(){
     this.calcCookiesPerHour();
-    console.log(this.cookiesThroughTheDayForLocation);
-    console.log(this.sumOfCookies);
+    // console.log(this.cookiesThroughTheDayForLocation);
+    // console.log(this.sumOfCookies);
 
     let tableMainRow = document.createElement('tr');
     tableEl.appendChild(tableMainRow);
@@ -71,7 +71,6 @@ function createTableHeader(){
     tableHeader.appendChild(tableRow);
     headerCol = document.createElement('th');
     tableRow.appendChild(headerCol);
-    headerCol.textContent = '';
 
     //insert the time inside the header cells:
     for (let i = 0; i < 14; i++) {
@@ -114,7 +113,7 @@ function createTableFooter(){
         dataOfWholeTotals += dataOfTotal;
         let totalCookies = document.createElement('th');
         totalHourRow.appendChild(totalCookies);
-        totalCookies.textContent = dataOfTotal 
+        totalCookies.textContent = dataOfTotal;
     }
     let totalOfTotals = document.createElement('th');
     totalHourRow.appendChild(totalOfTotals);
@@ -133,3 +132,28 @@ let lima = new cookieLocation('Lima', 2, 16, 4.6);
 
 //calling the table footer function:
 createTableFooter();
+
+
+const locationForm = document.getElementById('locationInfo');
+locationForm.addEventListener('submit', addNewLocation);
+
+function addNewLocation(event){
+    event.preventDefault();
+    console.log(event);
+    
+    let locationName = event.target.locationField.value;
+    let minimumValue = parseInt(event.target.minimumField.value);
+    let maximumValue = parseInt(event.target.maximumField.value);
+    let avgValue = parseFloat(event.target.avgField.value);
+    let newLocation = new cookieLocation(locationName, minimumValue, maximumValue, avgValue);
+ 
+
+    createTableFooter();
+    let rowIndex = locationArr.length+1;
+    //I found the deleteRow method from W3schools website.
+    tableEl.deleteRow(rowIndex);
+    console.log(rowIndex);    
+    
+}
+
+
