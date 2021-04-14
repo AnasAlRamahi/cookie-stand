@@ -2,8 +2,194 @@
 body {
     font-family: 'Bebas Neue', cursive; 
     background-image: url();
+    background-color: #f0e3ca;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    background-color: #f0e3ca;
+}
+
+h1:hover {
+    color:#a35709;
+}
+
+.headerImage {
+    width: 45px;
+    height: 40px;
+}
+
+#columnOne {
+    float: left;
+    width: 65%;
+    padding: 20px 2.5% 20px 2.5%;
+}
+
+#columnOne h3 {
+    font-size: 25px;
+    text-align: justify;
+}
+
+.whiteSection {
+    background-color: white;
+    float: left;
+    width: 65%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    border: solid;
+    border-radius: 20px;
+    position: relative;
+}
+
+.whiteSection p{
+    display: inline-block;
+    width: 50%;
+    
+}
+
+.whiteSection img{
+   
+}
+
+#columnThree {
+    float:right;
+    width: 28%;
+    background-color: white;
+    margin-top: 20px;
+    margin-right: 1%;
+    border: solid;
+    border-radius: 20px;
+}
+
+#columnThree h3 {
+    font-size: 35px;
+    padding: 20px;
+}
+
+#columnThree p {
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
+#columnThree p span{
+    text-align: right;
+    padding-left: 100px;    
+}
+
+#columnTwo {
+    float:right;
+    width: 28%;
+    background-color: lightblue;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 1%;
+    border:solid;
+    border-radius: 20px;
+}
+
+#columnTwo h2 {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#columnTwo li {
+    padding-top: 20px;
+    padding-bottom:20px;
+    padding: 20px;
+    text-align: center;
+}
+
+#columnTwo li iframe {
+    width: 300px;
+    height: 300px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#columnTwo li iframe:hover {
+    opacity: 0.75;
+}
+
+nav {
+    background-color: #a35709;
+    border: solid;
+    border-radius: 20px;
+    margin-left: 1.7%;
+    margin-right: 1.7%;
+}
+
+nav ul {
+    list-style-type: none;
+    width: 50%;
+    padding-left: 25%;
+    padding-right: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline-block;
+    padding-top:20px;
+    width: 32%;
+    text-align: center;
+    font-size: 35px;
 }
  
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+}
+
+nav ul li a:hover {
+    color: #f0e3ca;
+}
+
+
+
+
+
+
+/* for the sales page: */
+
+form {
+    border: solid;
+    border-radius: 20px;
+    margin: 30px 40%;
+    width: 20%;
+    padding-bottom: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+form legend {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 30px;
+}
+
+form label {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form #submitButton {
+    background-color: #a35709;
+        border: none;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer; 
+        border-radius: 50px;
+        position: absolute;
+        left: right;
+}
+
 table {
   
     display: table;
@@ -21,7 +207,7 @@ table {
 table tr td {
     border: solid;
     width: 30px;
-    text-align: center;
+    text-align: center; 
 }
 table tr th {
     width: 30px;
@@ -31,8 +217,5 @@ table thead, table tfoot {
     background-color: lightgrey;
 }
 
-nav ul li {
-    display: inline-block;
-}
 
 
