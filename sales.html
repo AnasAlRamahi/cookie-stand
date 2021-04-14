@@ -18,10 +18,10 @@
             <form action="" id="locationInfo">
                 <fieldset>
                     <legend>Add Location</legend>
-                        <label for="locationField">Name: <input type="text" id="locationField"></label>
-                        <label for="minimumField">Minimum: <input type="number" id="minimumField"></label>
-                        <label for="maximumField">Maximum: <input type="number" id="maximumField"></label>
-                        <label for="averageField">Average: <input type="number" step="0.01" id="avgField"></label>
+                        <label for="locationField">Name: <input type="text" id="locationField" required="required" minlength="3" maxlength="15"></label>
+                        <label for="minimumField">Minimum: <input type="number" id="minimumField" required="required" min="0"></label>
+                        <label for="maximumField">Maximum: <input type="number" id="maximumField" required="required" min="0"></label>
+                        <label for="averageField">Average: <input type="number" step="0.01" id="avgField" required="required" min="0"></label>
                         <input type="submit" value="Submit">
                 </fieldset>
             </form>

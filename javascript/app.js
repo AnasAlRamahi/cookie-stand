@@ -131,9 +131,8 @@ let paris = new cookieLocation('Paris', 20, 38, 2.3);
 let lima = new cookieLocation('Lima', 2, 16, 4.6);
 
 //calling the table footer function:
-
-
 createTableFooter();
+
 
 const locationForm = document.getElementById('locationInfo');
 locationForm.addEventListener('submit', addNewLocation);
@@ -143,17 +142,24 @@ function addNewLocation(event){
     console.log(event);
     
     let locationName = event.target.locationField.value;
+
+    if (locationArr.indexOf(locationName) > -1 ){
+        locationName.minCookiesPerHour = parseInt(event.target.minimumField.value);
+        locationName.maxCookiesPerHour = parseInt(event.target.maximumField.value);
+        locationName.avgCookiesPerCustomer = parseFloat(event.target.avgField.value);
+        console.log(locationName);
+    }else{
     let minimumValue = parseInt(event.target.minimumField.value);
     let maximumValue = parseInt(event.target.maximumField.value);
     let avgValue = parseFloat(event.target.avgField.value);
     let newLocation = new cookieLocation(locationName, minimumValue, maximumValue, avgValue);
-    
+    }
+
     createTableFooter();
     let rowIndex = locationArr.length+1;
+    //I found the deleteRow method from W3schools website.
     tableEl.deleteRow(rowIndex);
-    console.log(rowIndex);
-    
-    
+    console.log(rowIndex);    
     
 }
 
