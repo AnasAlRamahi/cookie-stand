@@ -11,6 +11,7 @@ function cookieLocation(location, minCookiesPerHour, maxCookiesPerHour, avgCooki
     this.cookiesThroughTheDayForLocation = [];
     this.sumOfCookies = 0;
     locationArr.push(this);
+    this.render();
 }
 
 cookieLocation.prototype.numOfCustomersPerHour= function(min, max){
@@ -88,7 +89,7 @@ function createTableHeader(){
     //create the total column at the right edge:
     let totalDayCol = document.createElement('th');
     tableRow.appendChild(totalDayCol);
-    totalDayCol.textContent = "Total";
+    totalDayCol.textContent = "Total/Day";
 }
 
 
@@ -123,17 +124,12 @@ function createTableFooter(){
 //calling the table header function:
 createTableHeader();
 
-//insert the instances to be rendered:
+//insert the instances to be rendered automatically:
 let seattle = new cookieLocation('Seattle', 23, 65, 6.3);
 let tokyo = new cookieLocation('Tokyo', 3, 24, 1.2);
 let dubai = new cookieLocation('Dubai', 11, 38, 3.7);
 let paris = new cookieLocation('Paris', 20, 38, 2.3);
 let lima = new cookieLocation('Lima', 2, 16, 4.6);
-let Amman = new cookieLocation('Amman', 23, 44, 5.5);
-
-for (let i = 0; i < locationArr.length; i++) {
-    locationArr[i].render();
-}  
 
 //calling the table footer function:
 createTableFooter();
