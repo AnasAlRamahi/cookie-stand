@@ -1,19 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
 body {
-    font-family: 'Bebas Neue', cursive; 
+    font-family: 'Comic Neue', cursive; 
     background-image: url();
-    background-color: #f0e3ca;
+    background-color: whitesmoke;
+    padding: 0;
+    margin:0;
+    /* background-image: url("../images/pexels-oleg-magni-2033997.jpg"); */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
 h1 {
     text-align: center;
     font-size: 60px;
-    background-color: #f0e3ca;
+    background-color: inherit;
+    padding: 15px;
 }
 
 h1:hover {
-    color:#a35709;
 }
 
 .headerImage {
@@ -59,8 +69,8 @@ h1:hover {
     background-color: white;
     margin-top: 20px;
     margin-right: 1%;
-    border: solid;
     border-radius: 20px;
+    box-shadow: -5px -5px;    
 }
 
 #columnThree h3 {
@@ -81,12 +91,14 @@ h1:hover {
 #columnTwo {
     float:right;
     width: 28%;
-    background-color: lightblue;
+    color: white;
+    background-color: rgb(87, 107, 114);
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 1%;
-    border:solid;
+    /* border:solid; */
     border-radius: 20px;
+    box-shadow: -5px -5px black;
 }
 
 #columnTwo h2 {
@@ -114,9 +126,7 @@ h1:hover {
 }
 
 nav {
-    background-color: #a35709;
-    border: solid;
-    border-radius: 20px;
+    background-color: rgb(87, 107, 114);
     margin-left: 1.7%;
     margin-right: 1.7%;
 }
@@ -148,7 +158,9 @@ nav ul li a:hover {
     color: #f0e3ca;
 }
 
-
+main {
+    margin: 30px;
+}
 
 
 
