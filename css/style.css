@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
     font-family: 'Comic Neue', cursive; 
     background-image: url();
-    background-color: whitesmoke;
+    background-color: rgb(247, 229, 242);
     padding: 0;
     margin:0;
     /* background-image: url("../images/pexels-oleg-magni-2033997.jpg"); */
@@ -24,6 +25,7 @@ h1 {
 }
 
 h1:hover {
+    cursor: pointer;
 }
 
 .headerImage {
@@ -32,14 +34,31 @@ h1:hover {
 }
 
 #columnOne {
-    float: left;
-    width: 65%;
-    padding: 20px 2.5% 20px 2.5%;
+    width: 100%;
+    /* padding: 20px 2.5% 20px 2.5%; */
 }
 
-#columnOne h3 {
-    font-size: 25px;
-    text-align: justify;
+#columnOne h4 {
+    font-size: 35px;
+    background-color: white;
+    text-align: center;
+}
+
+#productImages {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 30px 0;
+} 
+
+#productImages img {
+    width: 30%;
+}
+
+#productImages img:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 .whiteSection {
@@ -64,7 +83,7 @@ h1:hover {
 }
 
 #columnThree {
-    float:right;
+    
     width: 28%;
     background-color: white;
     margin-top: 20px;
@@ -89,22 +108,29 @@ h1:hover {
 }
 
 #columnTwo {
-    float:right;
-    width: 28%;
+    justify-content: space-evenly;
+    width: 100%;
     color: white;
-    background-color: rgb(87, 107, 114);
+    background-color:rgb(228, 150, 208);
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 1%;
-    /* border:solid; */
     border-radius: 20px;
-    box-shadow: -5px -5px black;
 }
 
 #columnTwo h2 {
-    font-size: 30px;
+    font-size: 60px;
     text-align: center;
     padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    width: 100%;
+}
+
+#columnTwo ul {
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 #columnTwo li {
@@ -115,10 +141,8 @@ h1:hover {
 }
 
 #columnTwo li iframe {
-    width: 300px;
+    width: 100%;
     height: 300px;
-    padding-left: 10%;
-    padding-right: 10%;
 }
 
 #columnTwo li iframe:hover {
@@ -126,9 +150,11 @@ h1:hover {
 }
 
 nav {
-    background-color: rgb(87, 107, 114);
-    margin-left: 1.7%;
-    margin-right: 1.7%;
+    background-color: rgb(241, 92, 204);
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    
 }
 
 nav ul {
@@ -138,28 +164,36 @@ nav ul {
     padding-right: 25%;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 nav ul li {
     display: inline-block;
     padding-top:20px;
-    width: 32%;
+    width: 33%;
     text-align: center;
     font-size: 35px;
+    position: relative;
 }
  
 nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 40px;
+    text-align: center;
+    
 }
 
 nav ul li a:hover {
-    color: #f0e3ca;
+    color: black;
+    font-size: 50px;
+    
 }
 
 main {
-    margin: 30px;
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color: white;
 }
 
 
@@ -167,30 +201,31 @@ main {
 
 /* for the sales page: */
 
+
+
 form {
     border: solid;
     border-radius: 20px;
-    margin: 30px 40%;
-    width: 20%;
+    width: 35%;
+    margin-top:20px;
     padding-bottom: 60px;
-    position: relative;
+    /* position: relative; */
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 form legend {
     text-align: center;
     padding: 10px 0;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 form label {
     padding: 10px;
-    margin-bottom: 10px;
 }
 
 form #submitButton {
-    background-color: #a35709;
+    background-color: rgb(207, 98, 180);
         border: none;
         color: #fff;
         padding: 15px 30px;
@@ -200,6 +235,19 @@ form #submitButton {
         border-radius: 50px;
         position: absolute;
         left: right;
+        font-size: 20px;
+}
+
+form #submitButton:hover {
+    color:black;
+}
+
+#SalesBody {
+    background-color: rgb(247, 229, 242);
+}
+
+#SalesMain {
+    background-color: rgb(247, 229, 242);
 }
 
 table {
@@ -209,10 +257,10 @@ table {
     border-spacing: 2px;
     border-color: black;
     border: solid;
-    margin-right: 25%;
-    margin-left: 25%;
+    margin-right: 15%;
+    margin-left: 15%;
     margin-top: 50px;
-    width: 50%;
+    width: 70%;
     background-color: white;
 }
 
@@ -221,12 +269,28 @@ table tr td {
     width: 30px;
     text-align: center; 
 }
+
+table tr td:hover {
+    font-weight: bold;
+    color:darkgrey;
+}
+
 table tr th {
     width: 30px;
 }
 
+table tr th:hover {
+    font-weight: bold;
+}
+
 table thead, table tfoot {
-    background-color: lightgrey;
+    background-color: rgb(228, 150, 208);
+}
+
+#second {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 ;
 }
 
 
