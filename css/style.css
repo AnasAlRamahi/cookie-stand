@@ -35,7 +35,6 @@ h1:hover {
 
 #columnOne {
     width: 100%;
-    /* padding: 20px 2.5% 20px 2.5%; */
 }
 
 #columnOne h4 {
@@ -59,6 +58,8 @@ h1:hover {
 #productImages img:hover {
     opacity: 0.8;
     cursor: pointer;
+    border:solid;
+    margin-bottom: 10px;
 }
 
 .whiteSection {
@@ -294,4 +295,60 @@ table thead, table tfoot {
 }
 
 
+footer {
+    position: relative;
+}
 
+footer img {
+    width: 100%;
+    height: 70%;
+    opacity: 0.3;
+    position: absolute;
+    z-index: 0;
+    /* bottom: 0px; */
+}
+
+footer h4 {
+    font-size: 60px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    width: 100%;
+    z-index: 1;
+    opacity: 1;
+}
+
+#social-media {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 1;
+}
+
+#social-media img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    opacity: 1;
+    padding: 30px 5%;
+    margin-bottom: 50px;
+}
+
+#social-media img:hover {
+    cursor: pointer;
+
+}
+
+footer p {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    font-size: 25px;
+}
+
+#copyrightDiv {
+    display: flex;
+    justify-content: center;
+}
