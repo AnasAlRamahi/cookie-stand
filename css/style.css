@@ -48,64 +48,46 @@ h1:hover {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 30px 0;
+    padding: 30px 0;
+    background-color: whitesmoke;
+    border-radius: 20px;
 } 
 
 #productImages img {
     width: 30%;
+    padding-bottom: 30px;
+    border:solid whitesmoke;
 }
 
 #productImages img:hover {
     opacity: 0.8;
     cursor: pointer;
-    border:solid;
-    margin-bottom: 10px;
+    border:solid black;
 }
 
-.whiteSection {
-    background-color: white;
-    float: left;
-    width: 65%;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-    border: solid;
-    border-radius: 20px;
-    position: relative;
-}
-
-.whiteSection p{
-    display: inline-block;
-    width: 50%;
+#orderNow {
     
-}
-
-.whiteSection img{
-   
-}
-
-#columnThree {
-    
-    width: 28%;
+    width: 18%;
     background-color: white;
-    margin-top: 20px;
-    margin-right: 1%;
+    margin-top: 10px;
     border-radius: 20px;
-    box-shadow: -5px -5px;    
+    box-shadow: 5px 5px;    
+    /* border: solid; */
+    position: absolute;
+    z-index: 2;
+    top: 0.5%;
+    left: 2%;
 }
 
-#columnThree h3 {
-    font-size: 35px;
-    padding: 20px;
+#orderNow h3 {
+    font-size: 30px;
+    padding: 10px;
 }
 
-#columnThree p {
-    font-size: 25px;
-    padding: 10px 20px;
-}
-
-#columnThree p span{
-    text-align: right;
-    padding-left: 100px;    
+#orderNow p {
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    
 }
 
 #columnTwo {
@@ -197,8 +179,82 @@ main {
     background-color: white;
 }
 
+#whiteSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: safe;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+}
 
+#whiteSection  div {
+    width: 50%;
+    padding: 5%;
+    font-size: 25px;
+}
 
+#whiteSection div h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+#whiteSection img {
+    width: 40%;
+    height: 100%;
+}
+
+#oppositeParagraph {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: safe;
+    width: 100%;
+    height: 300px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+
+#oppositeParagraph img {
+    width: 60%;
+}
+
+#oppositeParagraph div {
+    width: 30%;
+    padding: 5%;
+    font-size: 25px;
+}
+
+#oppositeParagraph div h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+#merchandice {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: safe;
+    background-color: white;
+    height: 300px;
+}
+
+#merchandice div {
+    font-size: 30px;
+    width: 60%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 60px;
+    background-color: white;
+}
+
+#merchandice div h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+#merchandice img {
+
+}
 
 /* for the sales page: */
 
@@ -301,11 +357,10 @@ footer {
 
 footer img {
     width: 100%;
-    height: 70%;
+    height: 90%;
     opacity: 0.3;
     position: absolute;
-    z-index: 0;
-    /* bottom: 0px; */
+    z-index: -1;
 }
 
 footer h4 {
@@ -316,7 +371,7 @@ footer h4 {
     display: block;
     width: 100%;
     z-index: 1;
-    opacity: 1;
+    color: rgba(0,0,0,1);
 }
 
 #social-media {
@@ -327,7 +382,7 @@ footer h4 {
     opacity: 1;
 }
 
-#social-media img {
+#social-media a {
     width: 100px;
     height: 100px;
     position: relative;
@@ -336,9 +391,13 @@ footer h4 {
     margin-bottom: 50px;
 }
 
-#social-media img:hover {
-    cursor: pointer;
-
+#social-media a img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    opacity: 1;
+    padding: 30px 5%;
+    margin-bottom: 50px;
 }
 
 footer p {
